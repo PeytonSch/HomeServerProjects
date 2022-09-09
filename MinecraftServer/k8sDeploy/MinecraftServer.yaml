@@ -27,6 +27,7 @@ spec:
         args: ["-c", "while true; do sleep 60;done"]
         ports:
         - containerPort: 25565
+          name: mc-cont-port
       imagePullSecrets:
       - name: regcred
       - name: regcred2
@@ -43,7 +44,7 @@ spec:
     app: minecraft
   ports:
     - port: 25565
-      targetPort: 25565
+      targetPort: mc-cont-port
       name: mc-port
 
 ---

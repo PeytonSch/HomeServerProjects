@@ -108,6 +108,7 @@ spec:
             # - --entrypoints.traefik.address=:9000/tcp
             - --entrypoints.web.address=:80/tcp
             - --entrypoints.websecure.address=:443/tcp
+            - --entrypoints.minecarft.address=:25565/tcp
             # - --api.dashboard=true
             # - --ping=true
             # - --metrics.prometheus=true
