@@ -112,8 +112,8 @@ spec:
             # - --ping=true
             # - --metrics.prometheus=true
             # - --metrics.prometheus.entrypoint=metrics
-            # - --providers.kubernetescrd
-            # - --providers.kubernetescrd.allowCrossNamespace=true
+            - --providers.kubernetescrd
+            - --providers.kubernetescrd.allowCrossNamespace=true
           ports:
             - name: web
               containerPort: 80
