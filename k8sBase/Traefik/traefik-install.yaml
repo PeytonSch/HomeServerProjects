@@ -133,6 +133,7 @@ spec:
   ports:
     - port: 8080
       targetPort: dashboard
+      name: dashboard
   selector:
     app: traefik
 
