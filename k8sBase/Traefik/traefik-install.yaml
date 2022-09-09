@@ -107,7 +107,7 @@ spec:
             # - --entrypoints.metrics.address=:9100/tcp
             # - --entrypoints.traefik.address=:9000/tcp
             # - --entrypoints.web.address=:8000/tcp
-            # - --entrypoints.websecure.address=:8443/tcp
+            - --entrypoints.websecure.address=:8443/tcp
             # - --api.dashboard=true
             # - --ping=true
             # - --metrics.prometheus=true
@@ -152,3 +152,21 @@ spec:
       port: 80
   selector:
     app: traefik
+
+--- 
+
+# Ingress Route so We Can Access Traefik Dashboard 
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: test-app
+  namespace: traefik-test
+spec:
+  routes:
+    - match: Host(`local.traefik`)
+      kind: Rule
+      services:
+        - name: traefik-dashboard-service
+          kind: Service
+          port: dashboard
