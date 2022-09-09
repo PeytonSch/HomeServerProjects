@@ -7,8 +7,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: modded-minecraft-server
-  namespace: "minecraft-server"
-  # namespace: "default"
+  namespace: minecraft-server
   labels:
     app: minecraft
 spec:
@@ -38,12 +37,30 @@ apiVersion: v1
 kind: Service
 metadata:
   name: minecraft-server
-  namespace: "minecraft-server"
-  # namespace: "default"
+  namespace: minecraft-server
 spec:
   selector:
-    app.kubernetes.io/name: minecraft
+    app: minecraft
   ports:
-    - protocol: TCP
-      port: 25565
+    - port: 25565
       targetPort: 25565
+      name: mc-port
+
+---
+
+# Ingress Route so We Can Access Through Traefik
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mc-server-route
+  namespace: minecraft-server
+spec:
+  routes:
+    - match: Host(`local.mc`)
+      kind: Rule
+      services:
+        - name: minecraft-server
+          kind: Service
+          port: mc-port
+          namespace: minecraft-server
