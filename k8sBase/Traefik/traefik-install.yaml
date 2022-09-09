@@ -96,7 +96,7 @@ spec:
       labels:
         app: traefik
     spec:
-      serviceAccountName: traefik-account
+      serviceAccountName: traefik-ingress-controller
       containers:
         - name: traefik
           image: traefik:v2.8
