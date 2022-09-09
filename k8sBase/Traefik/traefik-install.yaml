@@ -161,7 +161,6 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: test-app-route
-  namespace: traefik-test
 spec:
   routes:
     - match: Host(`local.traefik`)
