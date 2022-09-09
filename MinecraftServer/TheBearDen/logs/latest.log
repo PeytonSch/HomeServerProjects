@@ -1,0 +1,3 @@
+[09:27:48] [ServerMain/ERROR]: Failed to load properties from file: server.properties
+[09:27:48] [ServerMain/WARN]: Failed to load eula.txt
+[09:27:48] [ServerMain/INFO]: Initialized 'C:\Users\Peyton\AppData\Roaming\ATLauncher\servers\TheBearDen\server.properties' and 'C:\Users\Peyton\AppData\Roaming\ATLauncher\servers\TheBearDen\eula.txt'

@@ -1,0 +1,51 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screens.DatapackLoadFailureScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  path = config/fancymenu/assets/Gui/Loading_Screen/world_screen.png
+  action = texturizebackground
+}
+
+customization {
+  keepaspectratio = true
+  action = backgroundoptions
+}
+
+customization {
+  identifier = %id=505262%
+  orientation = mid-centered
+  x = 5
+  action = movebutton
+  y = 4
+}
+
+customization {
+  identifier = %id=345262%
+  orientation = mid-centered
+  x = -150
+  action = movebutton
+  y = 4
+}
+
+customization {
+  orientation = mid-centered
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = openlink
+  x = -75
+  width = 150
+  actionid = b9682a2f-a34b-48f1-91d1-aa714717157e1644228707554
+  action = addbutton
+  y = 29
+  label = Report Bug
+  value = https://github.com/AMPZNetwork/All-The-Forge-8/issues/new/choose
+  height = 20
+}
+

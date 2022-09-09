@@ -1,0 +1,168 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screens.PauseScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  identifier = %id=398306%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=398282%
+  orientation = mid-centered
+  x = -102
+  action = movebutton
+  y = -39
+}
+
+customization {
+  identifier = %id=504330%
+  orientation = mid-centered
+  x = 4
+  action = movebutton
+  y = 33
+}
+
+customization {
+  identifier = %id=398258%
+  orientation = mid-centered
+  x = -102
+  action = movebutton
+  y = -63
+}
+
+customization {
+  identifier = %id=398354%
+  orientation = mid-centered
+  x = -102
+  action = movebutton
+  y = 57
+}
+
+customization {
+  identifier = %id=504306%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=398330%
+  orientation = mid-centered
+  x = -102
+  action = movebutton
+  y = 33
+}
+
+customization {
+  identifier = %id=398330%
+  action = setbuttonlabel
+  value = Options
+}
+
+customization {
+  identifier = %id=504282%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=504282%
+  orientation = mid-centered
+  x = 4
+  action = movebutton
+  y = -37
+}
+
+customization {
+  identifier = %id=504282%
+  action = vanilla_button_visibility_requirements
+  vr:showif:singleplayer = true
+}
+
+customization {
+  orientation = mid-centered
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = openlink
+  x = -102
+  width = 98
+  actionid = 71533095-50a0-484f-a8df-ac832bb11bf21632317741518
+  action = addbutton
+  y = -15
+  label = More Packs
+  value = https://www.curseforge.com/members/teamampz/projects
+  height = 20
+}
+
+customization {
+  orientation = mid-centered
+  restartbackgroundanimations = true
+  buttonaction = openlink
+  description = Got a Suggestion?%n%Post it over on our suggestion page.
+  label = Suggestions
+  loopbackgroundanimations = true
+  x = 4
+  width = 98
+  actionid = 71533095-50a0-484f-a8df-ac832bb11bf21632317741518
+  action = addbutton
+  y = -15
+  value = https://forums.ampznetwork.com/suggestions/category/17-all-the-forge-8/
+  height = 20
+}
+
+customization {
+  orientation = mid-centered
+  restartbackgroundanimations = true
+  buttonaction = openlink
+  description = Built for PC's%n%with low memory (RAM).
+  label = Fabric Edition
+  loopbackgroundanimations = true
+  x = -102
+  width = 98
+  actionid = 71533095-50a0-484f-a8df-ac832bb11bf21632317741518
+  action = addbutton
+  y = 9
+  value = https://www.curseforge.com/minecraft/modpacks/all-the-fabric-3
+  height = 20
+}
+
+customization {
+  orientation = mid-centered
+  restartbackgroundanimations = true
+  buttonaction = openlink
+  description = Opens a web brower tab%n%to our GitHub tracker page.
+  label = Report a Bug
+  loopbackgroundanimations = true
+  x = 4
+  width = 98
+  actionid = 71533095-50a0-484f-a8df-ac832bb11bf21632317741518
+  action = addbutton
+  y = -39
+  value = https://github.com/AMPZNetwork/All-The-Forge-8/issues
+  height = 20
+}
+
+customization {
+  orientation = mid-centered
+  loopbackgroundanimations = true
+  restartbackgroundanimations = true
+  buttonaction = opengui
+  x = 4
+  width = 98
+  actionid = 1f2dea08-1c85-400d-a964-97468ae8c3871632390197409
+  action = addbutton
+  y = 9
+  label = Mods (%loadedmods%)
+  value = com.mrcrayfish.catalogue.client.screen.CatalogueModListScreen
+  height = 20
+}
+

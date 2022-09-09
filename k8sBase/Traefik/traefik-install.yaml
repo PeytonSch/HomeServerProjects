@@ -1,0 +1,155 @@
+# ClusterRole defines permissions to k8s API groups and resources
+# Using the expanded one with CRD permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: traefik-ingress-controller
+
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - endpoints
+      - secrets
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - extensions
+      - networking.k8s.io
+    resources:
+      - ingresses
+      - ingressclasses
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - extensions
+      - networking.k8s.io
+    resources:
+      - ingresses/status
+    verbs:
+      - update
+  - apiGroups:
+      - traefik.containo.us
+    resources:
+      - middlewares
+      - middlewaretcps
+      - ingressroutes
+      - traefikservices
+      - ingressroutetcps
+      - ingressrouteudps
+      - tlsoptions
+      - tlsstores
+      - serverstransports
+    verbs:
+      - get
+      - list
+      - watch
+
+---
+
+# Service Account for Traefik to use
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: traefik-ingress-controller
+
+--- 
+
+# Role Binding to Attach the Role Permission to the SA
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: traefik-ingress-controller
+
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: traefik-ingress-controller
+subjects:
+  - kind: ServiceAccount
+    name: traefik-ingress-controller
+    namespace: default
+
+---
+
+# Traefik Deployment
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: traefik-deployment
+  labels:
+    app: traefik
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-account
+      containers:
+        - name: traefik
+          image: traefik:v2.8
+          args:
+            - --api.insecure
+            - --providers.kubernetesingress
+            # - '--global.checknewversion'
+            # - '--entrypoints.metrics.address=:9100/tcp'
+            # - '--entrypoints.traefik.address=:9000/tcp'
+            # - '--entrypoints.web.address=:8000/tcp'
+            # - '--entrypoints.websecure.address=:8443/tcp'
+            # - '--api.dashboard=true'
+            # - '--ping=true'
+            # - '--metrics.prometheus=true'
+            # - '--metrics.prometheus.entrypoint=metrics'
+            # - '--providers.kubernetescrd'
+            # - '--providers.kubernetescrd.allowCrossNamespace=true'
+          ports:
+            - name: web
+              containerPort: 80
+            - name: dashboard
+              containerPort: 8080
+
+---
+
+# Service to Expose the Traefik Load Balancer
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-dashboard-service
+
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: dashboard
+  selector:
+    app: traefik
+
+---
+
+# Service to Expose the Traefik Web Service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-web-service
+
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: web
+      port: 80
+  selector:
+    app: traefik

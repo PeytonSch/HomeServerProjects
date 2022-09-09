@@ -1,0 +1,28 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screens.DatapackFailureScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  path = config/fancymenu/assets/Gui/Loading_Screen/world_screen.png
+  action = texturizebackground
+}
+
+customization {
+  orientation = mid-centered
+  buttonaction = openlink
+  x = -76
+  width = 150
+  actionid = a8ae4b51-b8c2-4ab4-b3dc-8a40d83ae65b1628428325550
+  action = addbutton
+  y = 28
+  label = Report Issue
+  value = https://github.com/AMPZNetwork/All-The-Forge-8/issues/new?assignees=&labels=Bug&template=bug_report.md&title=%5BBUG%5D
+  height = 20
+}
+

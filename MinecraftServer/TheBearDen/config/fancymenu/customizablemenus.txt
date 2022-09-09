@@ -1,0 +1,122 @@
+type = customizablemenus
+
+net.minecraft.client.gui.screens.DirtMessageScreen {
+}
+
+net.minecraft.client.gui.screens.ProgressScreen {
+}
+
+net.minecraft.client.gui.screens.MultiplayerWarningScreen {
+}
+
+net.minecraft.client.gui.screens.DisconnectedScreen {
+}
+
+net.minecraft.client.gui.screens.OptionsSoundsScreen {
+}
+
+net.minecraft.client.gui.screens.ConnectingScreen {
+}
+
+net.minecraft.client.gui.screens.CreateWorldScreen {
+}
+
+net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen {
+}
+
+net.minecraft.client.gui.screens.inventory.CreativeScreen {
+}
+
+net.minecraft.client.gui.screens.WorldSelectionScreen {
+}
+
+net.minecraftforge.fml.client.gui.screen.ModListScreen {
+}
+
+com.terraforged.mod.client.gui.screen.ConfigScreen {
+}
+
+net.minecraft.client.gui.screen.CreateFlatWorldScreen {
+}
+
+net.minecraft.client.gui.screen.FlatPresetsScreen {
+}
+
+net.minecraft.client.gui.screens.PauseScreen {
+}
+
+net.minecraft.client.gui.screens.EditServerScreen {
+}
+
+net.minecraft.client.gui.screens.DatapackFailureScreen {
+}
+
+com.sintinium.oauth.gui.LoginTypeScreen {
+}
+
+net.minecraft.client.gui.screens.BackupConfirmScreen {
+}
+
+net.minecraft.client.gui.screens.LevelLoadingScreen {
+}
+
+net.minecraft.client.gui.screens.GenericDirtMessageScreen {
+}
+
+net.minecraft.client.gui.screens.multiplayer.SafetyScreen {
+}
+
+net.minecraft.client.gui.screens.ConnectScreen {
+}
+
+com.sintinium.oauth.gui.LoginScreen {
+}
+
+net.minecraft.client.gui.screens.worldselection.CreateWorldScreen {
+}
+
+net.minecraft.client.gui.screens.worldselection.EditGameRulesScreen {
+}
+
+com.mrcrayfish.catalogue.client.screen.CatalogueModListScreen {
+}
+
+net.morimori.bettergamemenu.gui.BetterGameMenuScreen {
+}
+
+net.minecraft.client.gui.screens.ReceivingLevelScreen {
+}
+
+net.minecraft.client.gui.screens.OptionsScreen {
+}
+
+net.minecraft.client.gui.screens.PauseScreen {
+}
+
+net.minecraft.client.gui.screens.DirectJoinServerScreen {
+}
+
+net.minecraft.client.gui.screens.EditServerScreen {
+}
+
+net.minecraft.client.gui.screens.worldselection.SelectWorldScreen {
+}
+
+net.minecraft.client.gui.screens.CreateFlatWorldScreen {
+}
+
+net.minecraft.client.gui.screens.PresetFlatWorldScreen {
+}
+
+net.minecraft.client.gui.screens.TitleScreen {
+}
+
+com.sintinium.oauth.gui.profile.ProfileSelectionScreen {
+}
+
+net.minecraft.client.gui.screens.DatapackLoadFailureScreen {
+}
+
+net.minecraftforge.client.gui.ModMismatchDisconnectedScreen {
+}
+

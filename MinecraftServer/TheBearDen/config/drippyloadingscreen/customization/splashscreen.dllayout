@@ -1,0 +1,89 @@
+type = hud
+
+customization-meta {
+  randomgroup = 1
+  keepaspectratio = true
+  backgroundimage = config/drippyloadingscreen/assets/background.png
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  visible = false
+  action = editlogo
+}
+
+customization {
+  orientation = bottom-right
+  shadow = false
+  x = -2
+  textcolor = #ffffff
+  action = addtext
+  actionid = 34d83ac5-fef2-48e9-a87c-6c814f4813961629892539801
+  y = -1
+  scale = 0.5
+  alignment = left
+  value = Minecraft %mcversion% / Forge %version:forge%
+}
+
+customization {
+  orientation = mid-centered
+  shape = rectangle
+  color = #ffffff
+  x = 0
+  width = 1
+  action = addshape
+  actionid = 00f76cd3-ba29-4337-becd-c1ba1be9b21b1650797622817
+  y = 0
+  height = 68
+}
+
+customization {
+  path = config/drippyloadingscreen/assets/logo.png
+  orientation = mid-centered
+  x = 59
+  width = 133
+  action = addtexture
+  actionid = 93e437cc-74c4-4c88-abda-556269cf86b21650798741997
+  y = 2
+  height = 57
+}
+
+customization {
+  orientation = bottom-right
+  shadow = false
+  x = -3
+  textcolor = #ffffff
+  action = addtext
+  actionid = 416dc23d-f785-4460-a305-de7b102da1cc1650823202931
+  y = -8
+  scale = 0.5
+  alignment = left
+  value = Java %javaversion%
+}
+
+customization {
+  path = config/drippyloadingscreen/assets/mojangstudios.png
+  orientation = mid-centered
+  x = -76
+  width = 175
+  action = addtexture
+  actionid = 3dd444d1-77c5-4007-b3fb-a7a7c91ea4441650823666291
+  y = 7
+  height = 57
+}
+
+customization {
+  orientation = bottom-centered
+  shadow = false
+  x = -1
+  textcolor = #ffffff
+  action = addtext
+  actionid = c6241b56-62d1-4abf-8734-a825648c5d831651497420066
+  y = -62
+  scale = 0.8
+  alignment = left
+  value = %loadingprogress%%
+}
+

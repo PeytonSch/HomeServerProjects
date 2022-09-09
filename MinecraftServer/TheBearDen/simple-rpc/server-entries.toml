@@ -1,0 +1,11 @@
+enabled = true
+version = 1
+[[entry]]
+	ip = "atf8.ampznetwork.com"
+	description = "Connected to %servername%"
+	state = "%players%/%maxplayers% Players Online"
+	largeImageKey = "overworld_official_server"
+	largeImageText = "Dimension: %world%"
+	smallImageKey = "%servericon%"
+	smallImageText = "✔️ Official Server"
+
