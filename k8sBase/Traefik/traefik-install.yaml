@@ -163,7 +163,7 @@ metadata:
   name: test-app-route
 spec:
   routes:
-    - match: Host(`local.traefik`)
+    - match: Host(`local.traefik.test2`)
       kind: Rule
       services:
         - name: traefik-dashboard-service
