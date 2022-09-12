@@ -10,6 +10,8 @@ metadata:
   namespace: minecraft-server
   labels:
     app: minecraft
+    traefik.tcp.routers.mc.rule: HostSNI(`*`)
+    traefik.port: 25565
 spec:
   replicas: 1
   selector:
@@ -66,21 +68,21 @@ spec:
 #           port: mc-port
 #           namespace: minecraft-server
 
----
+# ---
 
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: mc-server-route
-  namespace: minecraft-server
-spec:
-  entryPoints:
-    - "minecarft"
-  routes:
-    - match: HostSNI(`*`)
-      kind: Rule
-      services:
-        - name: minecraft-server
-          kind: Service
-          port: mc-port
-          namespace: minecraft-server
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: mc-server-route
+#   namespace: minecraft-server
+# spec:
+#   entryPoints:
+#     - "minecarft"
+#   routes:
+#     - match: HostSNI(`*`)
+#       kind: Rule
+#       services:
+#         - name: minecraft-server
+#           kind: Service
+#           port: mc-port
+#           namespace: minecraft-server
