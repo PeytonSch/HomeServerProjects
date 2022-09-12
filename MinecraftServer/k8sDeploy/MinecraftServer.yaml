@@ -47,9 +47,26 @@ spec:
       targetPort: mc-cont-port
       name: mc-port
 
----
+# ---
 
 # Ingress Route so We Can Access Through Traefik
+
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: mc-server-route
+#   namespace: minecraft-server
+# spec:
+#   routes:
+#     - match: Host(`local.mc`)
+#       kind: Rule
+#       services:
+#         - name: minecraft-server
+#           kind: Service
+#           port: mc-port
+#           namespace: minecraft-server
+
+---
 
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
@@ -57,8 +74,10 @@ metadata:
   name: mc-server-route
   namespace: minecraft-server
 spec:
+  entryPoints:
+    - "minecarft"
   routes:
-    - match: Host(`local.mc`)
+    - match: HostSNI(`*`)
       kind: Rule
       services:
         - name: minecraft-server

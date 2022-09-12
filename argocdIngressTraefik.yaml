@@ -1,3 +1,20 @@
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: argo-route
+#   namespace: argocd
+# spec:
+#   routes:
+#     - match: Host(`local.argo`)
+#       kind: Rule
+#       services:
+#         - name: argocd-server
+#           kind: Service
+#           namespace: argocd
+#           port: 80
+
+---
+
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
